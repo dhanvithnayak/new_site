@@ -1,0 +1,10 @@
+body {
+    background-color: #c0c0c0;
+    font-family: "Times New Roman", serif;
+    font-size: 18px;
+}
+
+.header {
+    padding: 20px;
+    text-align: center;
+}
