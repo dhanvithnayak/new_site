@@ -16,3 +16,21 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.pause-btn {
+    position: fixed;
+    top: 14px;
+    right: 18px;
+    z-index: 9999;
+    display: none;
+    background: #d4d0c8;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    cursor: pointer;
+    user-select: none;
+}

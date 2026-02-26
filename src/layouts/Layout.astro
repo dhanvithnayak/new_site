@@ -46,6 +46,10 @@ const { title } = Astro.props;
       </center>
     </div>
 
+    <div id="music-btn" title="Pause music" class="pause-btn">
+      || PAUSE
+    </div>
+
     <br />
 
     <slot />
@@ -53,11 +57,25 @@ const { title } = Astro.props;
     <script>
       var overlay = document.getElementById("audio-overlay");
       var enterBtn = document.getElementById("enter-btn");
-      var audio = document.getElementById("bg-music");
+      var audio = document.getElementById("bg-music") as HTMLAudioElement;
+      var musicBtn = document.getElementById("music-btn") as HTMLElement;
 
       enterBtn.onclick = function () {
         audio.play();
         overlay.style.display = "none";
+        musicBtn.style.display = "block";
+      };
+
+      musicBtn.onclick = function () {
+        if (audio.paused) {
+          audio.play();
+          musicBtn.textContent = "|| PAUSE";
+          musicBtn.title = "Pause music";
+        } else {
+          audio.pause();
+          musicBtn.textContent = "> PLAY";
+          musicBtn.title = "Resume music";
+        }
       };
     </script>
   </body>
