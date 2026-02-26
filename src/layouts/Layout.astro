@@ -17,7 +17,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body background="/stars3.gif">
+  <body>
     <audio id="bg-music" src="/Boards of Canada- Echus [fjrPpzNeNZ0].m4a" loop />
 
     <div id="audio-overlay" class="audio-overlay">
@@ -73,6 +73,25 @@ const { title } = Astro.props;
           musicBtn.title = "Resume music";
         }
       };
+    </script>
+
+    <script>
+      let inactivityTimer;
+
+      function hideCursor() {
+        document.body.classList.add('cursor-hidden');
+      }
+
+      function showCursor() {
+        document.body.classList.remove('cursor-hidden');
+        clearTimeout(inactivityTimer);
+        inactivityTimer = setTimeout(hideCursor, 2000); // 2 seconds of inactivity
+      }
+
+      document.addEventListener('mousemove', showCursor);
+      document.addEventListener('mousedown', showCursor);
+
+      inactivityTimer = setTimeout(hideCursor, 2000);
     </script>
   </body>
 </html>
