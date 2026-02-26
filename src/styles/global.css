@@ -4,6 +4,11 @@ body {
     font-size: 16px;
 }
 
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
 .audio-overlay {
     position: fixed;
     top: 0;
@@ -33,4 +38,24 @@ body {
     border-bottom: 2px solid #808080;
     cursor: pointer;
     user-select: none;
+}
+
+.name-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    min-height: 100vh;
+}
+
+.name-images img {
+    max-width: 15vw;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .name-images {
+        flex-direction: column;
+    }
 }

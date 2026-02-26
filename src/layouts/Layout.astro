@@ -17,7 +17,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body background="/bg.gif">
+  <body>
     <audio id="bg-music" src="/Boards of Canada- Echus [fjrPpzNeNZ0].m4a" loop />
 
     <div id="audio-overlay" class="audio-overlay">
@@ -25,7 +25,7 @@ const { title } = Astro.props;
         <table border="4" cellpadding="15" cellspacing="5" bgcolor="#C0C0C0" width="400">
           <tr>
             <td align="center">
-              <h2 style="color: #FF0000; transform: translateX(-40px);">
+              <h2 style="color: #FF0000; transform: translateX(-30px);">
                 Let me play music ??
               </h2>
               <marquee scrollamount="8">
@@ -36,7 +36,7 @@ const { title } = Astro.props;
               </marquee>
               <button id="enter-btn" style="cursor: pointer; padding: 5px;">
                 <font face="Helvetica, sans-serif" size="2">
-                  <b>[  OK  ]</b>
+                  <b>[  O K  ]</b>
                 </font>
               </button>
               <br /><br />
@@ -46,11 +46,7 @@ const { title } = Astro.props;
       </center>
     </div>
 
-    <div id="music-btn" title="Pause music" class="pause-btn">
-      || PAUSE
-    </div>
-
-    <br />
+    <div id="music-btn" title="Pause music" class="pause-btn">|| PAUSE</div>
 
     <slot />
 
